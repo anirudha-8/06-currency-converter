@@ -1,5 +1,5 @@
 const InputBox = (
-	// props
+	// different props for this component
 
 	// 1. for label
 	label,
