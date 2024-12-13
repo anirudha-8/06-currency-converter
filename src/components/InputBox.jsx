@@ -3,7 +3,7 @@
 // accessibility attributes are used for accessibility users in optimization
 import { useId } from "react";
 
-const InputBox = (
+const InputBox = ({
 	// different props for this component
 
 	// 1. for label
@@ -12,17 +12,17 @@ const InputBox = (
 	// 2. for amount
 	amount,
 	onAmountChange,
-	amountDisable = false, // optional
+	amountDisable = false,
 
 	// 3. for currency
 	currencyOptions = [],
 	selectCurrency = "usd",
 	onCurrencyChange,
-	currencyDisable = false, // optional
+	currencyDisable = false,
 
 	// 4. for custom classes
-	className = ""
-) => {
+	className = "",
+}) => {
 	const amountInputId = useId();
 
 	return (
