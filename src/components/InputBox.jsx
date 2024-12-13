@@ -1,3 +1,8 @@
+// useId is a React Hook for generating unique IDs
+// that can be passed to accessibility attributes.
+// accessibility attributes are used for accessibility users in optimization
+import { useId } from "react";
+
 const InputBox = (
 	// different props for this component
 
@@ -18,15 +23,21 @@ const InputBox = (
 	// 4. for custom classes
 	className = ""
 ) => {
+	const amountInputId = useId();
+
 	return (
 		// parent for input box container
 		<div className={`bg-white p-3 rounded-lg text-sm flex ${className}`}>
 			{/* first half div for label and amount */}
 			<div className="w-1/2">
-				<label className="text-black/40 mb-2 inline-block">
+				<label
+					htmlFor={amountInputId}
+					className="text-black/40 mb-2 inline-block"
+				>
 					{label}
 				</label>
 				<input
+					id={amountInputId}
 					type="number"
 					placeholder="Amount"
 					className="outline-none w-full bg-transparent"
