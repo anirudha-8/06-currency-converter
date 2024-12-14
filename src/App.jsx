@@ -18,6 +18,7 @@ function App() {
 	// using custom created hook - "useCurrencyInfo"
 	// to retrieve all the keys from api data
 	const currencyInfo = useCurrencyInfo(from);
+	// collecting all the keys of "currency" passed data, in an array
 	const options = Object.keys(currencyInfo);
 
 	// function to swap the 2 input-box container
@@ -87,11 +88,15 @@ function App() {
 								label="TO"
 								// for amount
 								amount={convertedAmount}
+								// When a boolean prop is passed without an explicit value
+								// (e.g., amountDisable), it is automatically evaluated as "true" in JSX.
 								amountDisable
 								// for currency types / list
 								selectCurrency={to}
 								currencyOptions={options}
 								onCurrencyChange={(currency) => setTo(currency)}
+								// When a boolean prop is passed without an explicit value
+								// (e.g., currencyDisable), it is automatically evaluated as "true" in JSX.
 								currencyDisable
 							/>
 						</div>
